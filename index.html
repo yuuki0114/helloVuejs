@@ -1,18 +1,57 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello vue.js</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
   <div id ="app">
+    <ol>
+      <li v-for="color in colors"> {{ color }}</li>
+    </ol>
+
+    <ul>
+      <li v-for = "value in user"> {{ value }}</li>
+    </ul>
+
+    <hr>
+    <ul>
+      <li v-for="(value, key) in user">
+        {{ key }} : {{ value}}
+      </li>
+    </ul>
+
+    <hr>
+
+    <button v-on:click="onclick">
+      Click!
+    </button>
     <p>
-      {{ message }}
+      {{ now }}
     </p>
+
+    <hr>
+    
+    <p>
+      <input type="text" v-model="message">
+    </p>
+    <p>
+      <input type="text" v-model="message">
+    </p>
+
+    <hr>
+
+    <hello-component></hello-component>
+    <hello-component></hello-component>
+    <hello-component></hello-component>
+    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
